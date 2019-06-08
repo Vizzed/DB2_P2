@@ -1,0 +1,12 @@
+<tabelleMa xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <tabname>Artikel</tabname>
+  <zeile>
+    <artnr>4711</artnr>
+    <artbez>Schokolade</artbez>
+    <mge>100g</mge>
+    <preis>10.25</preis>
+    <steu>TK</steu>
+    <edat>2019-01-01</edat>
+  </zeile>
+
+</tabelleMa>

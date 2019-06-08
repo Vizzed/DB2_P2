@@ -1,0 +1,14 @@
+//Ertsellung einer Schemafactory und Schema+ Erstellen eines XMLReaders
+
+ 	SchemaFactory schemaFactory = SchemaFactory.newInstance("http://www.w3.org/2001/XMLSchema");
+ 	Schema schema = schemaFactory.newSchema(new File(schemaUrl));
+ 	XMLReader read1 = XMLReaderFactory.createXMLReader();
+
+//Setzten von Properties für das parsen und validieren von XML dateien mit XML Schemas
+        read1.setFeature("http://xml.org/sax/features/validation", true);
+        read1.setFeature("http://apache.org/xml/features/validation/schema", true);
+        read1.setFeature("http://apache.org/xml/features/validation/schema-full-checking",true);
+        read1.setProperty("http://apache.org/xml/properties/schema/external-noNamespaceSchemaLocation",schemaUrl);
+
+//Datentyp kann mit dem Befehl auselesen werden:
+	typeInfoProvider.getElementTypeInfo().getTypeName();

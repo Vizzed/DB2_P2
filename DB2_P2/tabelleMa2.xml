@@ -1,0 +1,8 @@
+<tabelleMa xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <tabname>Artikel</tabname>
+  <zeile>
+    <artnr>4711</artnr>
+    <artbez>Parf�m</artbez>
+    <preis>10.25</preis>
+  </zeile>
+</tabelleMa>

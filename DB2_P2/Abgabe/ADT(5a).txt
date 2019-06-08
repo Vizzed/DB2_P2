@@ -1,0 +1,23 @@
+5a)
+artikel:=TUPLE OF(artnr: int, artbez:string,mge:string, preis: decimal,kuehl:string,edat:date)
+BESTA:=TUPLE OF(bstnr:int,fk_knr:int,status:int,rsum:int,artListe:LIST OF(a:artikel)
+
+5c)
+Create OR REPLACE TYPE artikel_ty AS OBJECT(
+artnr Integer,
+artbez VARCHAR2(10 BYTE),
+mge VARCHAR2(10 BYTE),
+preis decimal(7,2),
+kuehl VARCHAR2(10 BYTE),
+edat Date)
+
+Create OR REPLACE TYPE artikel_nt AS TABLE OF artikel_ty
+
+
+CREATE TABLE BESTELLAT(
+bstnr Integer,
+FK_KNR Integer,
+status Integer,
+rsum decimal(7,2),
+artListe artikel_nt
+)NESTED TABLE artListe STORE AS artikel_nt_tab;

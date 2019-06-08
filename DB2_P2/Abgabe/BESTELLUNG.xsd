@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- definition of simple elements -->
+  <!--<xsd:element name="tabname" type="xsd:string"/> -->
+  <xsd:element name="bstnr" type="xsd:integer"/>
+  <xsd:element name="fk_knr" type="xsd:integer"/>
+  <xsd:element name="status" type="xsd:integer"/>
+  <xsd:element name="rsum" type="xsd:integer"/>
+  <xsd:element name="artnr" type="xsd:integer"/>
+  <xsd:element name="artbez" type="xsd:string"/>
+  <xsd:element name="mge" type="xsd:string"/>
+  <xsd:element name="preis" type="xsd:decimal"/>
+  <xsd:element name="kuehl" type="xsd:string"/>
+  <xsd:element name="edat" type="xsd:string"/>
+
+  <!-- definition of complex elements -->
+  <xsd:element name="BestellA">
+    <xsd:complexType>
+     <xsd:sequence>
+      <!--<xsd:element ref="tabname"/>-->
+      <xsd:element ref="BestellKind" maxOccurs="unbounded"/>
+     </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="ArtikelKind">
+	<xsd:complexType>
+	 <xsd:sequence>
+     <xsd:element ref="artnr"/>
+     <xsd:element ref="artbez"/>
+     <xsd:element ref="mge"/>
+     <xsd:element ref="preis"/>
+     <xsd:element ref="kuehl"/>
+     <xsd:element ref="edat"/>
+     </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+
+
+
+ <xsd:element name="ArtikelListe">
+    <xsd:complexType>
+     <xsd:sequence>
+      <!--<xsd:element ref="tabname"/>-->
+      <xsd:element ref="ArtikelKind" maxOccurs="unbounded"/>
+     </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+<xsd:element name="BestellKind">
+    <xsd:complexType>    1
+     <xsd:sequence>
+      <xsd:element ref="bstnr"/>
+      <xsd:element ref="fk_knr"/>
+      <xsd:element ref="status"/>
+      <xsd:element ref="rsum"/>
+       <xsd:element ref="ArtikelListe"/>
+     </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

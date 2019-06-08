@@ -1,0 +1,31 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!-- definition of simple elements -->
+  <xsd:element name="tabname" type="xsd:string"/>
+  <xsd:element name="artnr" type="xsd:integer"/>
+  <xsd:element name="artbez" type="xsd:string"/>
+    <xsd:element name="mge" type="xsd:string"/>
+  <xsd:element name="preis" type="xsd:decimal"/>
+  <xsd:element name="kuehl" type="xsd:string"/>
+    <xsd:element name="edat" type="xsd:date"/>
+  <!-- definition of complex elements -->
+  <xsd:element name="tabelleMa">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="tabname"/>
+        <xsd:element ref="zeile" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="zeile">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="artnr"/>
+        <xsd:element ref="artbez"/>
+        <xsd:element ref="mge"/>
+        <xsd:element ref="preis"/>
+        <xsd:element ref="kuehl"/>
+        <xsd:element ref="edat"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
